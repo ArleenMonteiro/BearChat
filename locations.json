@@ -1,0 +1,22 @@
+{"uc_residential_halls":[
+    { "loc":"Bellevue Gardens", "lat":39.1239709, "long":-84.5166 },
+    { "loc":"Calhoun Hall", "lat":39.1286478, "long":-84.5170178 },
+    { "loc":"Campus Recreation Center Hall", "lat":39.162, "long":-84.45689, "alias":["CRC Hall", "Campus Recreation Hall"] },
+    { "loc":"CP Cincy", "lat":39.1264554, "long":-84.5045131},
+    { "loc":"Dabney Hall", "lat":39.1316722, "long":-84.5131367 },
+    { "loc":"Daniels Hall", "lat":39.1314062, "long":-84.511784 },
+    { "loc":"Marian Spencer Hall", "lat":39.1336309, "long":-84.5121906 },
+    { "loc":"Morgens Hall", "lat":39.1349757, "long":-84.5119818 },
+    { "loc":"Schneider Hall", "lat":39.1322768, "long":-84.5122133 },
+    { "loc":"Scioto Hall", "lat":39.1343086, "long":-84.5119974 },
+    { "loc":"Siddall Hall", "lat":39.162, "long":-84.45689 },
+    { "loc":"Stratford Heights", "lat":39.1313558, "long":-84.5220724 },
+    { "loc":"The Deacon", "lat":39.1303605, "long":-84.522991 },
+    { "loc":"The Eden", "lat":39.1329805, "long":-84.5050224 },
+    { "loc":"Turner Hall", "lat":39.132477, "long":-84.511563 },
+    { "loc":"University Edge", "lat":39.1397246, "long":-84.5125798, "alias":"U Edge" },
+    { "loc":"University Park Apartments", "lat":39.1291004, "long":-84.5139121, "alias":"UPA" },
+    { "loc":"University Square Aparments", "lat":39.1280409, "long":-84.5158603,"alias":"U Square" },
+    { "loc":"101 East Corry", "lat":39.1285746, "long":-84.5069421 },
+    { "loc":"Jefferson House", "lat":39.1307305, "long":-84.510575 }   
+  ]}
