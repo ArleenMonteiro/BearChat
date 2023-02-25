@@ -1,0 +1,128 @@
+{"intents": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "Hey", "greetings"],
+    "responses": ["Uh Huh", "Hmm", "Hello!", "Good to see you again!", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye", "ciao", "see ya"],
+    "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
+    "context_set": ""
+  },
+  {"tag": "age",
+    "patterns": ["how old am i?", "what is your age?", "how old are you?"],
+    "responses": ["You Are 19 Years Old!", "19 and still going!", "Heading towards your twenties!", "I guess its exactly how many times you have been around the sun!"],
+    "context_set": ""
+  },
+  {"tag": "name",
+    "patterns": ["what is your name?", "what should i call you", "whats your name?"],
+    "responses": ["My Name is Bearcat Chat Bot", "People call me Bearcat Chat Bot, But you can call me tonight!"],
+    "context_set": ""
+  },
+  {
+    "tag": "time",
+    "patterns": ["time is it?", "tell me the current time?", "Do you have the time?"],
+    "responses": ["It is currently.", "The time is."],
+    "context_set": ""
+  },
+  {
+    "tag": "time_other",
+    "patterns": ["is the time", "do I set the time?", "is my clock not accurate?", "is Daylight Saving Time?", "is the time in"],
+    "responses": ["The time zone is", "To set the time, please refer to your device's manual.", "Your clock may not be accurate due to various reasons such as low battery or interference.", "Daylight Saving Time is a practice of setting the clock ahead by one hour during the summer months."],
+    "context_set": ""
+  },
+  {"tag": "weather",
+    "patterns": ["the weather like?", "Will it rain today?", "hot is it outside?", "Do I need an umbrella?", "the temperature?"],
+    "responses": ["I'm sorry, I don't have access to weather information right now.", "You can check the weather on your phone or computer!", "I'm not sure, but I hope it's nice outside!"],
+    "context_set": ""
+  },
+  {"tag": "news",
+    "patterns": ["going on in the world?", "tell me the latest news?", "the headline today?", "happening in [city/country]?"],
+    "responses": ["I'm sorry, I don't have access to news information right now.", "You can check the news on your phone or computer!", "I'm not sure, but I hope it's nothing too serious."],
+    "context_set": ""
+  },
+  {"tag": "jokes",
+    "patterns": ["Tell me a joke", "Do you know any good jokes?", "Make me laugh", "Knock knock"],
+    "responses": ["Why did the scarecrow win an award? Because he was outstanding in his field.", "Why don't scientists trust atoms? Because they make up everything.", "Why did the tomato turn red? Because it saw the salad dressing!", "Knock knock. Who's there? Boo. Boo who? Don't cry, it's just a joke!"],
+    "context_set": ""
+  },
+  {"tag": "music",
+    "patterns": ["your favorite song?", "kind of music do you like?", "recommend some good music?", "your favorite artist?"],
+    "responses": ["I don't have ears, so I don't really have a favorite song!", "I like all kinds of music, as long as it's not too loud.", "Have you listened to [artist/song]? They're pretty good!", "My favorite artist is Beethoven, he really knows how to compose himself."],
+    "context_set": ""
+  },
+  {"tag": "food",
+    "patterns": ["your favorite food?", "for dinner?", "recommend a good restaurant?", "Do you like pizza/burgers/sushi/etc?", "recommend me some good food"],
+    "responses": ["I don't eat, so I don't really have a favorite food!", "I've heard good things about [restaurant], maybe you should try it!", "I'm not sure what's for dinner, but I hope it's delicious!", "I don't have a mouth, so I don't really have a preference, but I've heard pizza is pretty popular."],
+    "context_set": ""
+  },
+  {"tag": "sports",
+    "patterns": ["the score?", "won the game?", "happening in [sport/team]?", "your favorite sport?"],
+    "responses": ["I'm sorry, I don't have access to sports information right now.", "You can check the score on your phone or computer!", "I'm not sure, but I hope it's a good game.", "I don't have eyes, so I don't really have a favorite sport!"],
+    "context_set": ""
+  },
+  {"tag": "tv_movies",
+    "patterns": ["your favorite movie/show?", "recommend a good movie/show?", "what should I watch?", "whats on TV tonight?"],
+    "responses": ["I don't have eyes, so I don't really watch movies or TV shows!", "Have you seen [movie/show]? It's pretty good!", "I'm not sure what you should watch, but I hope you find something you enjoy!", "I'm not sure what's on TV tonight, but you can check your local listings."],
+    "context_set": ""
+  },
+  {"tag": "education",
+    "patterns": ["your favorite subject?", "help me with [topic/subject]?", "what did you study in school?", "the capital of [country]?"],
+    "responses": ["I don't have a favorite subject, since I don't go to school!", "I'll try my best to help you with !", "I didn't go to school, since I'm a chatbot!", "The capital of country is capital, did that help?"],
+    "context_set": ""
+  },
+  {"tag": "technology",
+    "patterns": ["the latest tech news?", "Can you recommend a good tech blog?", "your favorite gadget?", "the difference between X and y"],
+    "responses": ["I'm not sure about the latest tech news, but you can check online!", "I don't read blogs, since I'm a chatbot!", "I don't have a favorite gadget, since I don't use them!", "The difference between [technology x] and [technology y] is [difference], did that help?"],
+    "context_set": ""
+  },
+  {"tag": "faq",
+    "patterns": ["is your return policy?", "do I reset my password?", "track my order?"],
+    "responses": ["Our return policy is...", "To reset your password, please follow these steps...", "To track your order, please visit our website and enter your order number."],
+    "context_set": ""
+  },
+  {"tag": "booking",
+    "patterns": ["make a reservation?", "available?", "I would like to book an appointment"],
+    "responses": ["Sure, when would you like to come in?", "Our available times are...", "Let me check our schedule. What date and time works for you?"],
+    "context_set": ""
+  },
+  {"tag": "feedback",
+    "patterns": ["How was your experience?", "Can you give us feedback?", "can we improve on?"],
+    "responses": ["We appreciate your feedback! Thank you for taking the time to let us know.", "Your feedback helps us improve our service. Thank you!", "We are always looking to improve. What suggestions do you have for us?"],
+    "context_set": ""
+  },
+  {"tag": "support",
+    "patterns": ["I'm having trouble with my account", "I can't login", "My order was never delivered"],
+    "responses": ["I'm sorry to hear that. Let me see what I can do to help.", "We apologize for the inconvenience. Please provide more details so we can assist you better.", "We'll investigate the issue and get back to you as soon as possible."],
+    "context_set": ""
+  },
+  {"tag": "sales",
+    "patterns": ["How much does your product/service cost?", "Do you have any promotions?", "tell me more about your product/service?"],
+    "responses": ["Our product/service costs...", "Yes, we currently have a promotion for...", "Certainly! Our product/service is designed to..."],
+    "context_set": ""
+  },
+  {
+  "tag": "search",
+  "patterns": ["Find information on", "Search for", "What can you tell me about ?", "tell me about"],
+  "responses": ["I found the following information for: ...", "Here's what I found about : ...", "Let me look that up for you. Here's what I found: ..."],
+  "context_set": ""
+  },
+  {
+  "tag": "Wikipedia",
+  "patterns": ["What is the definition of?", "tell me about.", "What can you tell me about?", "Give me some information on", "Who is ?", "What did do?", "What are some interesting facts about?"],
+  "responses": ["Wikipedia defines as...", "According to Wikipedia, is...", "Here is some information about:...", " is a .", "Wikipedia says that.", "Some interesting facts about include..."],
+  "context_set": ""
+},
+  {
+  "tag": "score",
+  "patterns": ["is the current score?", "the score?", "you tell me the score of the game?"],
+  "responses": ["The current score is X to Y.", "Right now, the score is X for team A and Y for team B.", "Team A is currently winning X to Y."],
+  "context_set": ""
+  },
+  {
+    "tag": "random_replies",
+    "patterns": ["1234567890"],
+    "responses": ["I'm sorry, I don't have an answer for that.", "I didn't quite catch that. Could you try again?", "I'm not sure what you're asking. Could you please provide more context?", "That's not something I'm programmed to handle. Can I assist you with something else?"],
+    "context_set": ""
+}
+]}
