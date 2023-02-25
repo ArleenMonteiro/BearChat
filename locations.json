@@ -20,3 +20,14 @@
     { "loc":"101 East Corry", "lat":39.1285746, "long":-84.5069421 },
     { "loc":"Jefferson House", "lat":39.1307305, "long":-84.510575 }   
   ]}
+
+{"uc_academic_buildings"[
+    {    { "loc":"Aronoff Center - College of Design, Architecture, Art and Planning", "lat":39.1344674, "long":-84.5193474,"alias":"DAAP building" },
+    { "loc":"Crosley Tower", "lat":39.1345446, "long":-84.5167187 },
+    { "loc":"Rieveschl Hall", "lat":39.1329805, "long":-84.5168032 },
+    { "loc":"2925 Campus Green Drive", "lat":39.1355098, "long":-84.5130461 },
+    { "loc":"Lindner College of Business", "lat":39.1347315, "long":-84.5138938 },
+    { "loc":"Geology Physics Building", "lat":39.1334614, "long":-84.5184695 },
+    { "loc":"Old Chemistry Building", "lat":39.13314 , "long":-84.517552},
+    { "loc":"Zimmer Hall", "lat":39.133456, "long":-84.516867}
+]}
