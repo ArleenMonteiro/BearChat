@@ -50,6 +50,6 @@ We learned how to use Flask and Pytorch  and also understood back-end to front-e
 
 We plan on adding more features to BearChat and providing it with Google Cloud connectivity which will allow it to be personalised based on any UC student. We also want to be able to add more buildings/parking spots on the location services and also name the UC buses that run on the shuttle services. Overall, we want to improve the student experience in relation to our website.
 
-##Front-end
+## Front-end
 
 <img width="1440" alt="Screenshot 2023-02-26 at 10 17 42 AM" src="https://user-images.githubusercontent.com/111902870/221419548-8ae0d51e-ad72-409c-b2bf-1d1eff75825a.png">
