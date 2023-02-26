@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="landing.css" />
+  <title>Speak String</title>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="wrapper">
+
+    <div class="navbar">
+      <div class="nav-items">
+          <img src="paws.png" style="width: 50px;">
+         
+      </div></div>
+      
+  <div id="home" >
+    <div id="main-title">
+    
+    <form>
+        <div class="form-group">
+            <div class="form-group">
+                <label for="Yucy text">Yucy is speaking....</label>
+                <textarea class="form-control" style="width: 1400px; height:500px; color:white;opacity:.2" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </form>
+
+
+  <button id="speak-button" class="button-32">Speak</button>
+  <p id="string"></p></div></div>
+
+  <script>
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var string = urlParams.get('string');
+    document.getElementById('string').textContent = string;
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(string);
+
+    document.getElementById('speak-button').addEventListener('click', function() {
+      synth.speak(utterance);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="landing.css" />
+      <title>Record Audio</title>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="wrapper">
+    
+        <div class="navbar">
+          <div class="nav-items">
+              <img src="paws.png" style="width: 50px;">
+             
+          </div></div>
+          
+      <div id="home" class="con-l-1"><div id="main-title">
+
+ <br><br><br><br> <br><br><br><br> <br><br><br><br>
+
+
+
+
+      <button id="record-button" onclick="startRecording()" class="button-32">Record</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+      <button id="stop-button" onclick="stopRecording()" class="button-32">Stop</button>
+      </div></div>
+    
+      <script>
+        let mediaRecorder;
+        let chunks = [];
+    
+        function startRecording() {
+          navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(function(stream) {
+              mediaRecorder = new MediaRecorder(stream);
+              mediaRecorder.start();
+              mediaRecorder.addEventListener("dataavailable", function(event) {
+                chunks.push(event.data);
+              });
+            });
+        }
+    
+        function stopRecording() {
+          mediaRecorder.stop();
+        }
+    
+        mediaRecorder.addEventListener("stop", function() {
+          const audioBlob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+          const audioUrl = URL.createObjectURL(audioBlob);
+          const audio = new Audio(audioUrl);
+          audio.play();
+          sendAudioData(audioBlob);
+        });
+    
+        function sendAudioData(audioBlob) {
+          const formData = new FormData();
+          formData.append("audio", audioBlob, "audio.ogg");
+    
+          fetch("/upload-audio", {
+            method: "POST",
+            body: formData
+          });
+        }
+
+        
+        
+
+      </script>
+    </body>
+    </html>
