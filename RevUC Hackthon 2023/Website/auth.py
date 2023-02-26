@@ -1,6 +1,7 @@
+import io
 
-#from neuralintents import GenericAssistant
 import numpy as np
+import ffmpeg
 import tflearn as tfl
 import tensorflow
 import random as rn
@@ -27,43 +28,6 @@ import feedparser
 import re
 import pywhatkit
 import googlesearcher
-#import uvicorn
-
-#pp = FastAPI()
-
-# from flask import Flask, request
-# from Website import create_app
-#
-# app = create_app()
-#
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-# @app.route('/')
-# def index():
-#     return '''
-#         <html>
-#         <body>
-#             <h1>Record Audio</h1>
-#             <iframe src="/record" style="border:none;width:400px;height:200px;"></iframe>
-#         </body>
-#         </html>
-#     '''
-#
-# @app.route('/record')
-# def record():
-#     return app.send_static_file('record.html')
-#
-# @app.route('/upload-audio', methods=['POST'])
-# def upload_audio():
-#     audio_file = request.files['audio']
-#
-#     return 'Audio file received'
-#
-# if __name__ == '__main__':
-#     app.run(debug=True)
-#
-
 
 stemmer = LancasterStemmer()
 Cont = True
@@ -172,7 +136,7 @@ net = tfl.input_data(shape=[None, len(training[0])])
 net = tfl.fully_connected(net, 8)
 net = tfl.fully_connected(net, 8)
 net = tfl.fully_connected(net, 8)
-net = tfl.fully_connected(net, 8)
+# net = tfl.fully_connected(net, 8)
 # net = tfl.fully_connected(net, 8)
 # net = tfl.fully_connected(net, 8)
 # net = tfl.fully_connected(net, 8)
@@ -185,51 +149,9 @@ model = tfl.DNN(net)
 try:
     model.load("model.tflearn")
 except:
-    model.fit(training, output, n_epoch=15000, batch_size=8, show_metric=True)
+    model.fit(training, output, n_epoch=500, batch_size=8, show_metric=True)
     model.save("model.tflearn")
     #net = tfl.fully_connected(net, 8)
-
-# # import torch
-# # import torch.nn as nn
-# # import torch.optim as optim
-#
-# input_size = len(training[0])
-# output_size = len(output[0])
-#
-# class NeuralNet(nn.Module):
-#     def __init__(self):
-#         super(NeuralNet, self).__init__()
-#         self.fc1 = nn.Linear(input_size, 8)
-#         self.fc2 = nn.Linear(8, 8)
-#         self.fc3 = nn.Linear(8, 8)
-#         self.fc4 = nn.Linear(8, output_size)
-#         self.softmax = nn.Softmax(dim=1)
-#
-#     def forward(self, x):
-#         x = torch.relu(self.fc1(x))
-#         x = torch.relu(self.fc2(x))
-#         x = torch.relu(self.fc3(x))
-#         x = self.softmax(self.fc4(x))
-#         return x
-#
-# model = NeuralNet()
-# criterion = nn.BCELoss()
-# optimizer = optim.SGD(model.parameters(), lr=0.01)
-#
-# try:
-#     model.load_state_dict(torch.load("model.pth"))
-# except:
-#     for epoch in range(6000):
-#         inputs = torch.Tensor(training)
-#         targets = torch.Tensor(output)
-#         optimizer.zero_grad()
-#         outputs = model(inputs)
-#         loss = criterion(outputs, targets)
-#         loss.backward()
-#         optimizer.step()
-#         if epoch % 100 == 0:
-#             print(f"Epoch {epoch+1}/{6000}, Loss: {loss.item():.4f}")
-#     torch.save(model.state_dict(), "model.pth")
 
 
 
@@ -373,18 +295,18 @@ def reply():
                 predictions = model.predict([bag_of_words(text, words)])[0]
                 #print(predictions)
                 predictions_index = np.argmax(predictions)
-                tag = labels[predictions_index]
-                check_responses(text, tag)
+                # tag = labels[predictions_index]
+                # check_responses(text, tag)
                 #print(tag)
-                # if (predictions[predictions_index] > 0.4):
-                #     tag = labels[predictions_index]
-                #     check_responses(text, tag)
-                # else:
-                #     for tg in data["intents"]:
-                #         if tg["tag"] == "random_replies":
-                #             responses = tg["responses"] #TODO
-                #     predictions = rn.choice(responses)
-                #     bot_talk(predictions)
+                if (predictions[predictions_index] > 0.4):
+                    tag = labels[predictions_index]
+                    check_responses(text, tag)
+                else:
+                    for tg in data["intents"]:
+                        if tg["tag"] == "random_replies":
+                            responses = tg["responses"] #TODO
+                    predictions = rn.choice(responses)
+                    bot_talk(predictions)
 
                 #bot_reply(text)
                 #assistant.request(text)
@@ -392,40 +314,77 @@ def reply():
             recognizer = speech_recognition.Recognizer()
             pass
 
-reply()
-# assistant = GenericAssistant('intents.json', intent_methods=mappings, model_name="test_model")
-# assistant.train_model()
-# assistant.save_model()
 
-# def bot_reply(command):
-#     #assitant.request(command)
-#     command = command.lower()
-#     print(command)
-#     bot_talk(command)
-#     if (command == "stop" or command == "bye" or command == "end" or command == 'goodbye' or command == "good bye"):
-#         global Cont
-#         Cont = False
-#         bot_talk("It was nice talking to you!")
-#         bot_talk("Hope you have a great day ahead!")
-#     if (command == "where is tuc"):
-#         bot_talk("TUC - Tangamin University Center is close by")
-#     words = command.split(" ")
+from flask import Blueprint, request
 
-'''
-  {"tag": "travel",
-    "patterns": ["What's your favorite travel destination?", "Can you recommend a good place to visit?", "What's the best time to travel?", "How do I get to [place]?"],
-    "responses": ["I don't have a favorite travel destination, since I don't go on trips!", "Have you considered visiting [place]? I've heard it's really nice!", "The best time to travel depends on the place you're going to and your preferences!", "To get to [place], you can take a [mode of transportation], did that help?"],
-    "context_set": ""
-  },
-    {"tag": "stocks",
-    "patterns": ["what stocks do I own?", "how are my shares?", "what companies am I investing in?", "what am I doing in the markets?"],
-    "responses": ["I do not have any information about your stocks!"],
-    "context_set": ""
-  },
-    {
-    "tag": "time_random",
-    "patterns": ["is your favorite time of the day?", "Do you have any time management tips?", "Can you tell me a fun fact about time?"],
-    "responses": ["I don't have a favorite time of the day since I'm an AI.", "Sure, some time management tips include prioritizing tasks and breaking them down into smaller ones.", "Did you know that time dilation occurs in space? Time passes slower in stronger gravitational fields."],
-    "context_set": ""
-  },
-'''
+auth = Blueprint('auth', __name__)
+
+@auth.route("/process", methods=['POST'])
+def processData():
+    audio = None
+    file = request.files.get("audio")
+    file.save("audio.webm")
+
+    output_stream = ffmpeg.output(ffmpeg.input("../../audio.webm"), "audio.wav")
+    ffmpeg.run(output_stream)
+    with open("audio.wav", "rb") as source:
+        audio = recognizer.record(source)
+    text = recognizer.recognize_google(audio)
+    text = text.lower()
+    print(text)
+    return "ko"
+
+@auth.route('/', methods= ['GET'])
+def BearChat():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Record Audio</title>
+    </head>
+    <body>
+      <button id="record-button" onclick="startRecording()">Record</button>
+      <button id="stop-button" onclick="stopRecording()">Stop</button>
+    
+      <script>
+        let mediaRecorder;
+        let chunks = [];
+    
+        function startRecording() {
+          navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(function(stream) {
+              mediaRecorder = new MediaRecorder(stream);
+              mediaRecorder.start();
+              mediaRecorder.addEventListener("stop", function() {
+                const audioBlob = new Blob(chunks, { type: "audio/wav; codecs=0" });
+                console.log(audioBlob);
+                const audioUrl = URL.createObjectURL(audioBlob);
+                const audio = new Audio(audioUrl);
+                audio.play();
+                sendAudioData(audioBlob);
+                });
+              mediaRecorder.addEventListener("dataavailable", function(event) {
+                chunks.push(event.data);
+              });
+            });
+        }
+    
+        function stopRecording() {
+          mediaRecorder.stop();
+        }
+    
+        function sendAudioData(audioBlob) {
+          const formData = new FormData();
+          formData.append("audio", audioBlob, "audio.wav");
+          formData.append("t", "test")
+            
+          fetch("/app.html/process", {
+            method: "POST",
+            body: formData
+          });
+        }
+      </script>
+    </body>
+    </html>
+    """

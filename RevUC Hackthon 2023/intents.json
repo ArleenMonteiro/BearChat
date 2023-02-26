@@ -9,6 +9,120 @@
     "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
     "context_set": ""
   },
+  {
+    "tag": "search",
+  "patterns": ["Find information on", "Search for", "What can you tell me about ?", "tell me about"],
+  "responses": ["I found the following information for: ...", "Here's what I found about : ...", "Let me look that up for you. Here's what I found: ..."],
+  "context_set": ""
+  },
+  {
+  "tag": "Wikipedia",
+  "patterns": ["What is the definition of?", "tell me about.", "What can you tell me about?", "Give me some information on", "Who is ?", "What did do?", "What are some interesting facts about?"],
+  "responses": ["Wikipedia defines as...", "According to Wikipedia, is...", "Here is some information about:...", " is a .", "Wikipedia says that.", "Some interesting facts about include..."],
+  "context_set": ""
+  },
+    {
+    "tag": "weather",
+    "patterns": ["the weather like?", "Will it rain today?", "hot is it outside?", "Do I need an umbrella?", "the temperature?"],
+    "responses": ["I'm sorry, I don't have access to weather information right now.", "You can check the weather on your phone or computer!", "I'm not sure, but I hope it's nice outside!"],
+    "context_set": ""
+  },
+  {
+    "tag": "academic_help",
+    "patterns": ["I need help with my assignment", "Can you assist me with my research paper?", "I am having trouble understanding this topic, can you help?", "How can I improve my study skills?", "Can you recommend any good academic resources?", "academic support"],
+    "responses": ["Sure, I can help you with your assignment. Please share the details.", "Of course, what do you need help with specifically for your research paper?", "I'd be happy to assist you with understanding the topic. Can you tell me more about what you're struggling with?", "There are several ways to improve your study skills. Would you like me to suggest some resources?", "Certainly! There are many great academic resources available. Would you like me to recommend a few?"],
+    "context_set": ""
+  },
+  {
+    "tag": "shuttle_help",
+    "patterns": ["When does the shuttle run?", "Where can I find the shuttle schedule?", "How often does the shuttle come?", "Is the shuttle free to use?", "Can you tell me how to use the shuttle?"],
+    "responses": ["The shuttle runs from 7am to 11pm daily. You can find the schedule on our website or at the front desk.", "The shuttle runs every 30 minutes. The schedule is available on our website or at the front desk.", "The shuttle is free to use for all guests. Simply present your room key to the driver.", "To use the shuttle, simply wait at the designated pickup spot at your designated time. Be sure to have your room key with you to present to the driver.", "We're happy to help you with any questions you have about using the shuttle. Feel free to ask us anything!"],
+    "context_set": ""
+  },
+  {
+    "tag": "therapy",
+    "patterns": ["help me deal with my emotions?", "feeling really anxious lately.", "cope with stress?", "I'm having trouble sleeping. What should I do?", "I'm feeling depressed. Can you help?", "How do I deal with grief?", "Can you help?"],
+    "responses": ["It sounds like you're going through a tough time. Remember that taking care of yourself is important, and it's okay to ask for help when you need it. I'd suggest that you take a walk around Nippert Stadium! The wind blowing against your skin will make you feel so much better :) ", "Managing emotions can be difficult, but there are strategies that can help. Have you considered mindfulness or deep breathing exercises?", "Stress can have a big impact on our health and wellbeing. Some people find exercise, meditation, or therapy helpful for coping with stress. You should at the Campus Recreation Center!  Go walk, run, lift weights or engage in a physical activity you enjoy.", "Sleep problems are common, but there are things you can try to improve your sleep hygiene. Have you tried creating a bedtime routine or limiting screen time before bed?", "Depression is a serious condition that can be treated. Have you considered speaking to a therapist or your doctor about your symptoms?", "Grief is a normal and natural response to loss, but it can be difficult to navigate. Have you considered seeking support from a therapist or support group?", "I'm here to listen and support you. Remember, it's okay to ask for help when you need it."],
+    "context_set": ""
+  },
+  {
+    "tag": "scholarships",
+    "patterns": ["tell me about scholarships?", "Do you offer scholarships?", "What scholarships are available?", "apply for scholarships?"],
+    "responses": ["We offer a variety of scholarships to eligible students. Please visit our website for more information.", "Yes, we have a number of scholarships available. You can find more details on our website or by contacting our admissions office.", "We offer both need-based and merit-based scholarships to qualifying students. Please visit our website for more information.", "To apply for scholarships, you'll need to complete our scholarship application process. This usually involves submitting an essay or other materials along with your application. Please visit our website for more information."],
+    "context_set": ""
+  },
+  {
+    "tag": "TA",
+    "patterns": ["Who is my TA?", "How can I contact my TA?", "What is the email of my TA?", "Can you give me the name of my TA?", "When are the office hours of my TA?", "Who is my teaching assistant?", "How can I contact my teaching assistant?", "What is the email of my teaching assistant?", "Can you give me the name of my teaching assistant?", "When are the office hours of my teaching assistant?"],
+    "responses": ["Your TA is [TA name]. You can contact them via email at [TA email].", "You can reach out to your TA, [TA name], by sending an email to [TA email].", "The name of your TA is [TA name], and you can email them at [TA email].", "Your TA is [TA name], and their email address is [TA email].", "The office hours of your TA, [TA name], are [TA office hours]."],
+    "context_set": ""
+  },
+  {
+  "tag": "volunteering_help",
+  "patterns": ["How can I find volunteering opportunities?", "What are some local volunteering organizations?", "Do you have any suggestions for virtual volunteering?", "How can I track my volunteer hours?", "What are some ways I can give back to my community?", "Can you recommend any volunteer programs for teens?"],
+  "responses": ["You can find volunteering opportunities through websites like VolunteerMatch or Idealist.", "Some local volunteering organizations include [ORGANIZATION 1], [ORGANIZATION 2], and [ORGANIZATION 3].", "There are many virtual volunteering opportunities available through organizations like [ORGANIZATION 1], [ORGANIZATION 2], and [ORGANIZATION 3].", "You can track your volunteer hours using apps like [APP 1], [APP 2], or [APP 3].", "There are many ways to give back to your community, including volunteering at a local organization, donating to a charity, or participating in a community service project.", "Some volunteer programs for teens include [PROGRAM 1], [PROGRAM 2], and [PROGRAM 3]."
+  ],
+  "context_set": ""
+  },
+  {
+    "tag": "time",
+    "patterns": ["time is it?", "tell me the current time?", "Do you have the time?"],
+    "responses": ["It is currently.", "The time is."],
+    "context_set": ""
+  },
+  {
+    "tag": "notes",
+    "patterns": ["Add a note", "Create a new note", "Write a memo", "Note taking"],
+    "responses": ["What would you like to name the note?", "Sure, what's the title for your note?", "Alright, what's the topic of your memo?"],
+    "context_set": ""
+  },
+  {
+    "tag": "notes_view",
+    "patterns": ["View my notes", "Show me my memos", "Display my notes", "What are my notes?"],
+    "responses": ["Sure, here are your notes:", "Of course, here's a list of your memos:", "Let me pull up your notes:"],
+    "context_set": ""
+  },
+  {
+    "tag": "notes_del",
+    "patterns": ["Delete a note", "Remove a memo", "Erase a note", "Clear a memo"],
+    "responses": ["Which note would you like to delete?", "Sure, which memo do you want to remove?", "Alright, which note should I erase?"],
+    "context_set": ""
+  },
+  {
+    "tag": "notes_help",
+    "patterns": ["I need help with notes", "How can I use notes?", "What are some tips for note taking?"],
+    "responses": ["Sure, here are some tips for taking notes:", "Here are some best practices for note taking:", "Of course, here are some ways to improve your note taking skills:"],
+    "context_set": ""
+  },
+  {
+    "tag": "play_music",
+    "patterns": ["play", "Play some music", "Can you recommend some good songs?", "favorite band?", "mood for some tunes", "good playlist for working out?", "favorite genre of music?", "youtube"],
+    "responses": [ "Sure, here's a playlist I think you'll like!", "Here are some of my favorite songs:", "My favorite band is...", "How about this playlist for working out?", "I love all kinds of music, but lately I've been really into..."],
+    "context_set": ""
+  },
+  {
+    "tag": "music",
+    "patterns": ["play", "your favorite song?", "kind of music do you like?"],
+    "responses": ["I don't have ears, so I don't really have a favorite song!", "I like all kinds of music, as long as it's not too loud.", "Have you listened to [artist/song]? They're pretty good!", "My favorite artist is Beethoven, he really knows how to compose himself."],
+    "context_set": ""
+  },
+  {
+    "tag": "todo",
+    "patterns": ["Add to my to-do list", "Create a new to-do for", "What do I have on my to-do list?"],
+    "responses": ["Sure, I've added to your to-do list.", "Your to-do list now includes [item].", "Your current to-do list includes: [items_list]"],
+    "context_set": ""
+  },
+  {"tag": "news",
+    "patterns": ["going on in the world?", "tell me the latest news?", "the headline today?", "happening in [city/country]?"],
+    "responses": ["I'm sorry, I don't have access to news information right now.", "You can check the news on your phone or computer!", "I'm not sure, but I hope it's nothing too serious."],
+    "context_set": ""
+  },
+  {
+  "tag": "score",
+  "patterns": ["is the current score?", "the score?", "you tell me the score of the game?"],
+  "responses": ["The current score is X to Y.", "Right now, the score is X for team A and Y for team B.", "Team A is currently winning X to Y."],
+  "context_set": ""
+  },
   {"tag": "age",
     "patterns": ["how old am i?", "what is your age?", "how old are you?"],
     "responses": ["You Are 19 Years Old!", "19 and still going!", "Heading towards your twenties!", "I guess its exactly how many times you have been around the sun!"],
@@ -20,35 +134,14 @@
     "context_set": ""
   },
   {
-    "tag": "time",
-    "patterns": ["time is it?", "tell me the current time?", "Do you have the time?"],
-    "responses": ["It is currently.", "The time is."],
-    "context_set": ""
-  },
-  {
     "tag": "time_other",
     "patterns": ["is the time", "do I set the time?", "is my clock not accurate?", "is Daylight Saving Time?", "is the time in"],
     "responses": ["The time zone is", "To set the time, please refer to your device's manual.", "Your clock may not be accurate due to various reasons such as low battery or interference.", "Daylight Saving Time is a practice of setting the clock ahead by one hour during the summer months."],
     "context_set": ""
   },
-  {"tag": "weather",
-    "patterns": ["the weather like?", "Will it rain today?", "hot is it outside?", "Do I need an umbrella?", "the temperature?"],
-    "responses": ["I'm sorry, I don't have access to weather information right now.", "You can check the weather on your phone or computer!", "I'm not sure, but I hope it's nice outside!"],
-    "context_set": ""
-  },
-  {"tag": "news",
-    "patterns": ["going on in the world?", "tell me the latest news?", "the headline today?", "happening in [city/country]?"],
-    "responses": ["I'm sorry, I don't have access to news information right now.", "You can check the news on your phone or computer!", "I'm not sure, but I hope it's nothing too serious."],
-    "context_set": ""
-  },
   {"tag": "jokes",
     "patterns": ["Tell me a joke", "Do you know any good jokes?", "Make me laugh", "Knock knock"],
     "responses": ["Why did the scarecrow win an award? Because he was outstanding in his field.", "Why don't scientists trust atoms? Because they make up everything.", "Why did the tomato turn red? Because it saw the salad dressing!", "Knock knock. Who's there? Boo. Boo who? Don't cry, it's just a joke!"],
-    "context_set": ""
-  },
-  {"tag": "music",
-    "patterns": ["your favorite song?", "kind of music do you like?", "recommend some good music?", "your favorite artist?"],
-    "responses": ["I don't have ears, so I don't really have a favorite song!", "I like all kinds of music, as long as it's not too loud.", "Have you listened to [artist/song]? They're pretty good!", "My favorite artist is Beethoven, he really knows how to compose himself."],
     "context_set": ""
   },
   {"tag": "food",
@@ -100,24 +193,6 @@
     "patterns": ["How much does your product/service cost?", "Do you have any promotions?", "tell me more about your product/service?"],
     "responses": ["Our product/service costs...", "Yes, we currently have a promotion for...", "Certainly! Our product/service is designed to..."],
     "context_set": ""
-  },
-  {
-  "tag": "search",
-  "patterns": ["Find information on", "Search for", "What can you tell me about ?", "tell me about"],
-  "responses": ["I found the following information for: ...", "Here's what I found about : ...", "Let me look that up for you. Here's what I found: ..."],
-  "context_set": ""
-  },
-  {
-  "tag": "Wikipedia",
-  "patterns": ["What is the definition of?", "tell me about.", "What can you tell me about?", "Give me some information on", "Who is ?", "What did do?", "What are some interesting facts about?"],
-  "responses": ["Wikipedia defines as...", "According to Wikipedia, is...", "Here is some information about:...", " is a .", "Wikipedia says that.", "Some interesting facts about include..."],
-  "context_set": ""
-},
-  {
-  "tag": "score",
-  "patterns": ["is the current score?", "the score?", "you tell me the score of the game?"],
-  "responses": ["The current score is X to Y.", "Right now, the score is X for team A and Y for team B.", "Team A is currently winning X to Y."],
-  "context_set": ""
   },
   {
     "tag": "random_replies",
