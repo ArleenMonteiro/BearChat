@@ -1,4 +1,13 @@
-{"locs":
+// //Parse location_hall.json
+
+// var fs=require("fs");
+// const { json } = require("stream/consumers");
+
+// console.log("\n *STARTING* \n");
+
+// var contents=fs.readFileSync("location_hall.json");
+
+contents = {"locs":
     {
     "uc_residential_halls":[
         { "loc":"Bellevue Gardens", "lat":39.1239709, "long":-84.5166 },
@@ -46,3 +55,42 @@
     ]}
 }
 
+//console.log(contents['locs']);
+
+//var jsonData=JSON.parse(contents);
+var jsonData=contents;
+// Parse the JSON file into a JavaScript object
+// const data = JSON.parse(contents);
+const data = contents;
+
+// Access the "uc_residential_halls" array
+const ucResidentialHalls = data.locs.uc_residential_halls;
+
+  
+  // Initialize and add the map
+function initMap() {
+  // The location of UC
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+      center: {lat:39.1345446,lng:-84.5167187},
+      });
+
+
+      for (let i = 0; i < ucResidentialHalls.length; i++) {
+        const hall = ucResidentialHalls[i];
+
+        const marker = new google.maps.Marker({
+          position: {lat:hall['lat'], lng:hall['long']},
+          map: map,
+          title : hall['loc'],
+        });
+      }
+
+
+ }
+
+//initMap()
+//window.initMap = initMap;
+
+//jsonData['locs.uc_residential_halls];
